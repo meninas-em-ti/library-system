@@ -1,6 +1,7 @@
 # library-system
 
 # Overall Requirements
+
 ## Library holds classes:
 - All prices are weekly – total is weekly x 12
 - Storytime for kids €5 (must have school name when registering class) limit 40
