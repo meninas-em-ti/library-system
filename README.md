@@ -1,5 +1,6 @@
 # library-system
 
+# Overall Requirements
 ## Library holds classes:
 - All prices are weekly – total is weekly x 12
 - Storytime for kids €5 (must have school name when registering class) limit 40
@@ -13,19 +14,34 @@ The classes can be paid for weekly, or a course bought and paid for before it st
 - Timetable also allows the library to be used by all (walk in service), price depends on age group children and over 60s €5, everyone else €10
 
 ## Software should allow: 
+### Management
 - Login for management
 - Add or remove classes
 - Change prices
 - Change number of people per class
 - Check customer accounts to ensure payment up to date etc
-## Staff sign people in
+### Staff 
+- sign people in
 - Ensure account up to date/take payment
 - Update classes
 - Add / remove people from classes
 - See how often people attended classes, how long they’re a member etc
 - Email customers to let them know their class is starting/payment due etc
-## Customers 
+### Customers 
 - Find classes / timetable / get prices 
 - Register for class (choosing pay weekly / pay in total receiving discount)
 - Remove themselves from a class
 - Email to ask a question
+
+## Techologies
+- Java
+- Spring
+- Docker
+- MySql
+- Thymeleaf, React or Vue
+- Heroku
+- JUnit 5
+- Integration Tests
+- Figma
+
+
