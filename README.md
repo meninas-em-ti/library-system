@@ -22,7 +22,7 @@ The classes can be paid for weekly, or a course bought and paid for before it st
 - Change number of people per class
 - Check customer accounts to ensure payment up to date etc
 ### Staff 
-- sign people in
+- Sign people in
 - Ensure account up to date/take payment
 - Update classes
 - Add / remove people from classes
