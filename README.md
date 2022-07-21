@@ -39,7 +39,7 @@ The classes can be paid for weekly, or a course bought and paid for before it st
 - Spring
 - Docker
 - MySql
-- Thymeleaf, React or Vue
+- Thymeleaf, React, Vue or Angular
 - Heroku
 - JUnit 5
 - Integration Tests
