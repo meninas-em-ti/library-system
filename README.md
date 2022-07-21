@@ -34,7 +34,7 @@ The classes can be paid for weekly, or a course bought and paid for before it st
 - Remove themselves from a class
 - Email to ask a question
 
-## Techologies
+## Technologies
 - Java
 - Spring
 - Docker
