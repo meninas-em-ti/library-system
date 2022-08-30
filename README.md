@@ -35,7 +35,7 @@ The classes can be paid for weekly, or a course bought and paid for before it st
 - Email to ask a question
 
 ## Technologies
-- Java
+- Java 11
 - Spring
 - Docker
 - MySql
