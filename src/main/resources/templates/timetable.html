@@ -4,14 +4,64 @@
     <head th:replace="~{base :: head}"></head>
 
     <body>
-        <!--============================== Header =================================-->
+        <!--============================== Header ================================-->
 
         <div th:replace="~{base :: header}"></div>
 
+        <!--=========================== Showcase image =============================-->
+        <div class="showcase">
+            <img src="../images/library-image.jpg" class="img-fluid" alt="Responsive image" width="100% \9;">
+            <div class="container">
+                <div class="showcase_text">
+                    <h2>Welcome to our library website!</h2>
+                    <p class="showcase_title">We have a variety of services that fits all needs.</p>
+                    <a href="#" class="showcase_btn">more info</a>
+                </div>
+            </div>
+        </div>
+
         <!--=========================== Content ===================================-->
 
-        <img src="../images/library-image.jpg" class="img-fluid" alt="Responsive image" width="100% \9;">
-        <div class="courses"> Needs to add available courses <br></div>
+        <h1 class="content_title">Library Timetable 2022</h1>
+
+        <div class="courses">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Course Name</th>
+                        <th scope="col">Day fo The Week</th>
+                        <th scope="col">Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>English literature for beginners</td>
+                        <td>Monday</td>
+                        <td>20:00</td>
+                    </tr>
+                    <tr>
+                        <td>Storytime for kids</td>
+                        <td>Tuesday</td>
+                        <td>20:00</td>
+                    </tr>
+                    <tr>
+                        <td>Creative Writing for beginners</td>
+                        <td>Wednesday</td>
+                        <td>20:00</td>
+                    </tr>
+                    <tr>
+                        <td>Computers for beginners</td>
+                        <td>Thursday</td>
+                        <td>20:00</td>
+                    </tr>
+                    <tr>
+                        <td>Technology</td>
+                        <td>Friday</td>
+                        <td>20:00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <!--=============================== Footer =================================-->
 
