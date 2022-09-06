@@ -1,0 +1,95 @@
+/* ======================================================== Showcase image ========================================================*/
+.showcase{
+    position: relative;
+    color: #fff;
+}
+
+.showcase_text{
+    position: absolute;
+    top: 33%;
+    left: 0;
+    right: 0;
+}
+
+.showcase h2, .showcase p, .showcase a{
+    text-align: center;
+}
+
+.showcase .showcase_title{
+    font-size: 20px;
+    line-height: 20px;
+    margin-top: 8px;
+}
+
+.showcase p{
+    margin-top: 35px;
+}
+
+.showcase_btn{
+    font: 20px/20px 'Fjalla One';
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: rgba(255,255,255,0.25);
+    border: 2px solid #fff;
+    border-radius: 4px;
+    display: block;
+    width: 148px;
+    margin: 50px auto 0;
+    padding: 13px 0;
+    -webkit-transition: all 0.2s linear 0s;
+    -moz-transition: all 0.2s linear 0s;
+    -o-transition: all 0.2s linear 0s;
+    transition: all 0.2s linear 0s;
+}
+
+.showcase_btn:hover{
+    background: rgba(255,255,255,0.5);
+    text-decoration: none;
+    -webkit-transition: all 0.2s linear 0s;
+    -moz-transition: all 0.2s linear 0s;
+    -o-transition: all 0.2s linear 0s;
+    transition: all 0.2s linear 0s;
+}
+
+.showcase__style .showcase_text{
+	top: 20%;
+}
+.showcase__style .showcase_title{
+	margin-top: 20px;
+}
+
+/* ======================================================== Content ========================================================*/
+
+.content_title{
+    text-align:center;
+    margin: 100px 30px 30px 30px;
+}
+
+.courses{
+    text-align:center;
+    margin: 30px 30px 100px 30px;
+}
+
+table {
+    border-spacing: 20px 0;
+}
+
+th, td {
+    width: 150px;
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+/* ======================================================== Footer ========================================================*/
+
+#footer {
+    position: fixed;
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    width: 100%;
+    /* Height of the footer*/
+    height: 40px;
+    background: grey;
+}
