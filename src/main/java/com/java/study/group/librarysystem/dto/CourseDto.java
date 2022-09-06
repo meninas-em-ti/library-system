@@ -18,5 +18,4 @@ public class CourseDto {
     private Long priceOfClass;
     private int numberOfClasses;
     private int durationOfClasses;
-
 }
