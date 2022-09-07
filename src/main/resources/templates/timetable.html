@@ -29,35 +29,15 @@
                 <thead>
                     <tr>
                         <th scope="col">Course Name</th>
-                        <th scope="col">Day of The Week</th>
                         <th scope="col">Time</th>
+                        <th scope="col">Price</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>English literature for beginners</td>
-                        <td>Monday</td>
-                        <td>20:00</td>
-                    </tr>
-                    <tr>
-                        <td>Storytime for kids</td>
-                        <td>Tuesday</td>
-                        <td>20:00</td>
-                    </tr>
-                    <tr>
-                        <td>Creative Writing for beginners</td>
-                        <td>Wednesday</td>
-                        <td>20:00</td>
-                    </tr>
-                    <tr>
-                        <td>Computers for beginners</td>
-                        <td>Thursday</td>
-                        <td>20:00</td>
-                    </tr>
-                    <tr>
-                        <td>Technology</td>
-                        <td>Friday</td>
-                        <td>20:00</td>
+                    <tr th:each="course : ${coursesDto}">
+                        <td th:text="${course.name}">English literature for beginners</td>
+                        <td th:text="${#temporals.format(course.timetable, 'dd-MM-yyyy HH:mm') + ' (' + #temporals.dayOfWeekName(course.timetable) + ')'}"></td>
+                        <td th:text="${course.priceOfClass}">20:00</td>
                     </tr>
                 </tbody>
             </table>
