@@ -2,6 +2,7 @@ package com.java.study.group.librarysystem.ITtest;
 
 import com.java.study.group.librarysystem.ITtest.steps.CommonSteps;
 import com.java.study.group.librarysystem.LibrarySystemApplication;
+import io.restassured.response.Response;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
@@ -31,8 +32,8 @@ class HealthIT {
 
     @Test
     void healthCheck() {
-        commonSteps.makeGetRequestToApplication("actuator/health");
-        commonSteps.verifyResponseStatusCode(HttpStatus.SC_OK);
-        commonSteps.verifyApplicationIsUp();
+        final Response response = commonSteps.makeGetRequestToApplication("actuator/health");
+        commonSteps.verifyResponseStatusCode(response, HttpStatus.SC_OK);
+        commonSteps.verifyApplicationIsUp(response);
     }
 }
