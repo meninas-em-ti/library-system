@@ -46,3 +46,8 @@ The classes can be paid for weekly, or a course bought and paid for before it st
 - Figma
 
 
+We can run using h2
+Run:
+```console
+mvn spring-boot:run -Dspring-boot.run.profiles=dev
+```
