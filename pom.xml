@@ -76,12 +76,8 @@
 		<dependency>
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>
+			<version>8.0.1</version>
 		</dependency>
-		<dependency>
-			<groupId>org.flywaydb</groupId>
-			<artifactId>flyway-mysql</artifactId>
-		</dependency>
-
 		<dependency>
 			<groupId>net.serenity-bdd</groupId>
 			<artifactId>serenity-rest-assured</artifactId>
