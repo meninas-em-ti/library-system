@@ -9,12 +9,10 @@ import javax.persistence.Id;
 @Data
 @NoArgsConstructor
 @Entity
-public class Login {
-    @Id
-    private Long id;
-    private String username;
-    private String password;
-    private int accessId;
+public class AccessType {
 
+    @Id
+    private int accessId;
+    private String role;
 
 }
