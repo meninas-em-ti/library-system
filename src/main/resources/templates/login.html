@@ -24,18 +24,18 @@
     <div class="login-container">
         <div class="form-container">
 
-            <form action="#" th:action="@{/login/signin}" th:object="${login}" method="post" class="form">
+            <form action="/login/signin"  method="post" class="form">
                 <h2 class="form-title">Log in</h2>
 
                 <div class="form-input-container">
                     <div>
                         <i class="fa-regular fa-user" id="iconlogin1"></i>
-                        <input class="form-input" id="name" th:field="*{username}" type="text">
+                        <input class="form-input" type="text" name="username"  id="name"/>
                     </div>
 
                     <div>
                         <i class="fa-solid fa-lock" id="iconlogin2"></i>
-                        <input class="form-input" id="password" th:field="*{password}" type="text">
+                        <input class="form-input" type="text"  name="password" id="password"  />
                     </div>
 
                     <div class="form-linkforgotpassw">
