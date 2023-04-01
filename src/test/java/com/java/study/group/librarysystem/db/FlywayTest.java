@@ -7,6 +7,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.sql.DataSource;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Arrays;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
@@ -16,9 +22,15 @@ class FlywayTest {
   private DataSource dataSource;
 
   @Test
-  void testFlywayMigration() {
+  void testFlywayMigration() throws IOException {
+    //Setup expected number of files that will be executed by the Flyway
+    final Path folder = Paths.get("src/main/resources/db/migration");
+    final long expectedSize = Files.walk(folder)
+        .filter(Files::isRegularFile)
+        .count();
+
     // Initialize Flyway
-    Flyway flyway = Flyway.configure()
+    final Flyway flyway = Flyway.configure()
         .dataSource(dataSource)
         .locations("classpath:db/migration")
         .load();
@@ -27,6 +39,7 @@ class FlywayTest {
     flyway.migrate();
 
     // Verify that the migrations were successful
-    assertThat(flyway.info().applied().length).isEqualTo(2);
+    final Long filesCountExecutedByFlyway = Arrays.stream(flyway.info().applied()).count();
+    assertThat(filesCountExecutedByFlyway).isEqualTo(expectedSize);
   }
 }
