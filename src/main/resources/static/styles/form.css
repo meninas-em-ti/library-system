@@ -1,0 +1,86 @@
+.form{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 55px 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.form-inputs{
+    flex-direction: column;
+}
+
+.horizline{
+    width:504px;
+    height: 0px;
+    left: 110px;
+    top: 100px;
+    border: 1px solid #C1A6C2; 
+    
+}
+
+.form-linkforgotpassw{
+    display: flex; 
+    padding:0px 0px 0px 245px; 
+}
+    
+.rememberme-loginbutton{
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+ 
+   /* align-items: start;
+    padding: 0%;
+    width: 1px;   */
+    /* you could actually just change it to 0px */
+    /* margin: 0px 20px 0px 5px; */
+    
+    /* display:flex;
+    flex-direction: row; */
+}
+
+/* .rememberme-loginbutton:after{
+    content: "";
+  display: table;
+  clear: both;
+} */
+
+.rememberme{
+    padding:0px 180px 0px 0px;
+   /* float: left;
+    width: 10%;
+    padding: 1px;
+    height: 10px;
+    
+   */
+   /* background-color: palevioletred;  */
+
+}
+
+ /* #rememberme{
+    box-sizing: content-box;
+}  */
+
+.form-button{
+    color: #ffffff;
+    background-color:#900993;
+    width: 74px;
+    height: 30px;
+    border-radius: 6px;
+    border: none;
+    font-weight: bold;
+    
+}
+
+.loginbutton{
+    padding:0px 0px 0px 0px;
+    /* background-color: yellowgreen; */
+}
+
+.form-link{
+    color: #4355EE;
+    font-weight: bold;
+}
