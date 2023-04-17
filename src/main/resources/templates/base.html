@@ -21,7 +21,9 @@
       </ul>
 
       <div class="col-md-3 text-end">
-        <button type="button" class="btn btn-outline-primary me-2">Login</button>
+        <form action="#" th:action="@{/courses/timetables}"  method="post">
+          <button type="submit" class="btn btn-outline-primary me-2" id="btn-login">Login</button>
+        </form>
         <button type="button" class="btn btn-primary">Sign-up</button>
       </div>
     </header>
