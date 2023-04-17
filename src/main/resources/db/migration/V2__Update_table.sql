@@ -1,1 +1,0 @@
-ALTER TABLE `employee` ADD `dept_id` int AFTER `email`;
