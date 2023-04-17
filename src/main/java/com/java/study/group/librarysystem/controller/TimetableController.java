@@ -27,7 +27,7 @@ public class TimetableController {
     return "timetable";
   }
 
-  @PostMapping("/timetables")
+  @PostMapping("/timetable")
   public String loginSubmit(Model model){
     return "login";
 

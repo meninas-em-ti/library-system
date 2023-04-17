@@ -24,18 +24,19 @@
     <div class="login-container">
         <div class="form-container">
 
-            <form class="form">
+            <form action="/login/signin"  method="post" class="form">
                 <h2 class="form-title">Log in</h2>
+                <p th:text="${error}"></p>
 
                 <div class="form-input-container">
                     <div>
                         <i class="fa-regular fa-user" id="iconlogin1"></i>
-                        <input class="form-input" id="name" type="username">
+                        <input class="form-input" type="text" name="username"  id="name"/>
                     </div>
 
                     <div>
                         <i class="fa-solid fa-lock" id="iconlogin2"></i>
-                        <input class="form-input" id="password" type="password">
+                        <input class="form-input" type="text"  name="password" id="password"  />
                     </div>
 
                     <div class="form-linkforgotpassw">
