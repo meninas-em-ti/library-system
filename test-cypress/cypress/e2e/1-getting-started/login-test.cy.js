@@ -7,8 +7,8 @@ describe('example to-do app', () => {
 
     it('login successfully', () => {
         cy.get('#btn-login').contains("Login").click()
-        cy.get('#name').type('user01')
-        cy.get('#password').type('123456')
+        cy.get('#name').type('Admin')
+        cy.get('#password').type('Admin@123')
     })
 
 });
