@@ -4,6 +4,7 @@ import com.java.study.group.librarysystem.dto.CourseDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.time.LocalDateTime;
@@ -24,5 +25,11 @@ public class TimetableController {
     model.addAttribute("coursesDto", courseDtoList);
 
     return "timetable";
+  }
+
+  @PostMapping("/timetable")
+  public String loginSubmit(Model model){
+    return "login";
+
   }
 }
