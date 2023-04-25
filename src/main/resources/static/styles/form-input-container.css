@@ -1,0 +1,21 @@
+.form-input-container{
+    display:flex;
+    flex-direction: column;
+    gap: 28px;
+    padding-bottom: 2%;
+    /*border-bottom: 2px solid black;*/
+}
+
+/*#iconlogin1{
+    height: 50px;
+    width: 32x;
+}*/
+
+.fa-regular{
+    font-size: 1.25em;
+}
+
+.fa-solid{
+    font-size: 1.25em;
+}
+
