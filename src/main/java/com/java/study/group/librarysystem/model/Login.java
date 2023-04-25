@@ -1,6 +1,5 @@
 package com.java.study.group.librarysystem.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -15,6 +14,5 @@ public class Login {
     private Long id;
     private String username;
     private String password;
-
 
 }
