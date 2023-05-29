@@ -9,7 +9,7 @@ describe('example to-do app', () => {
           cy.get('#login.button').click()
           cy.get('#name').type('Admin')
           cy.get('#password').type('Admin@123')
-          cy.get('button').contain('Login').click()
+          cy.get('button').contain('Login').click
           cy.title().should('include','My account - My store')
         })
 
