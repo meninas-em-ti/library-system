@@ -1,0 +1,30 @@
+storytime:
+  course: "Storytime for kids"
+  limit: "40"
+  age: "Kids"
+  price: "5.00"
+  instructor: Joyce
+literature:
+  course: "English literature for beginners"
+  limit: "30"
+  age: Teens
+  price: "10.00"
+  instructor: Raquel
+  writing:
+    course: "Creative Writing for beginners"
+    limit: "30"
+    age: "Teens"
+    price: "15.00"
+    instructor: Bruna
+computers:
+  course: "Computers for beginners"
+  limit: "30"
+  age: "Adults"
+  price: "20.00"
+  instructor: Elaine
+technology:
+  course: "Technology for the over 60s"
+  limit: "20"
+  age: "Over 60s"
+  price: "5.00"
+  instructor: "Ivone"

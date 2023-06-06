@@ -1,30 +1,47 @@
 @login
 Feature: Course
-
   As a system administrator
   I want to manage courses
   So that I can perform CRUD operations on the courses table
 
+  @new_course
   Scenario Outline: New Course
-  As a administrator
-  I want to create a new course
-  So that I can see a new course in TimeTable
+  The System Administrator registers a new course
+  and new course is inserted into the list
 
-    Given I am administratior
-    And I am on the course administration page
-    When I add a course name <course name>
-    And I add a course time <time>
-    And I add a course price <price>
-    Then The new course should be visible in the course list
+    Given <code> is a new course
+    When do I register for this course
+    Then I should see the new course in the list
+
+    Examples:
+      |   code        |
+      | "storytime"   |
+      | "literature"  |
+      | "writing"     |
+      | "computers"   |
+      | "technology"  |
 
 
-  Examples:
-  |  course name                          | limit of costumers |  age group     |   price     | instructor name   |
-  |  "Storytime for kids"                 |       40           |  "Kids"        |   5.00      |   "Joyce"         |
-  |  "English literature for beginners"   |       30           |  "Teens"       |   10.00     |   "Raquel"        |
-  |  "Creative Writing for beginners"     |       30           |  "Teens"       |   15.00     |   "Bruna"         |
-  |  "Computers for beginners"            |       30           |  "Adults"      |   20.00     |   "Elaine"        |
-  |  "Technology for the over 60s"        |       20           |  "Over 60s"    |   5.00      |   "Ivone"         |
+  Scenario: without course name
+    When I try to register a corso without the name
+    Then I must see the notification "Name field is required"
+
+  Scenario: without limit of costumers
+    When I try to register a corso without the name
+    Then I must see the notification "Limit of costumers is required"
+
+  Scenario: without age
+    When I try to register a corso without the name
+    Then I must see the notification "Age group is required"
+
+  Scenario: without price
+    When I try to register a corso without the name
+    Then I must see the notification "Price is required"
+
+  Scenario: without instructor
+    When I try to register a corso without the name
+    Then I must see the notification "Instructor is required"
+
 
 
   Scenario: Edit Course
