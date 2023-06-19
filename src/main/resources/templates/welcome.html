@@ -8,25 +8,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="./css/login-container.css">
-    <link rel="stylesheet" href="./css/form-container.css">
-    <link rel="stylesheet" href="../styles/form.css">
-    <link rel="stylesheet" href="./css/form-title.css">
-    <link rel="stylesheet" href="./css/form-input-container.css">
-    <link rel="stylesheet" href="./css/form-input.css">
+    <link rel="stylesheet" href="../styles/welcome.css">
+
 
 </head>
 
 <body>
-    <main>
-        <div class="welcome">
-            <div>
+<main>
+    <div class="welcome">
+        <form
+            action="/create-course/courses" method="post" class="form">
+            <button class="btn btn-primary">Create Course</button>
+        </form>
+        <form
+            action="/update-course/courses" method="post" class="form">
+            <button class="btn btn-secondary">Update Course</button>
+        </form>
+        <div>
 
-                <p>Welcome!!!!</p>
-            </div>
+            <p>Welcome!!!!</p>
+        </div>
 
-    </main>
+    </div>
+</main>
 </body>
 </html>
