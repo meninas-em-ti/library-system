@@ -24,7 +24,6 @@ public class Course {
     private LocalDateTime timetable;
     private String ageGroup;
     private Long priceOfClass;
-    private int numberOfClasses;
-    private int durationOfClasses;
+    private String instructorName;
 
 }
