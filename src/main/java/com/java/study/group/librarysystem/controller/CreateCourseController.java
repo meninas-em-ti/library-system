@@ -1,6 +1,5 @@
 package com.java.study.group.librarysystem.controller;
 
-import com.java.study.group.librarysystem.dto.CreateCourseDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,9 +17,8 @@ public class CreateCourseController {
 
         }
 
-
         @PostMapping("/courses") //course/create-course
-        public String performCreateCourse(final CreateCourseDto createCourseDto, final Model model) {
+        public String performCreateCourse(final Model model) {
 
                 return "create-course"; //create-course.html
 
