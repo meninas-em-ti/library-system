@@ -19,9 +19,8 @@ public class CourseController {
     @Autowired
     CourseRepository repository;
 
-    @GetMapping("")
-    public String getCourse(Model model) {
-        System.out.println();
+    @GetMapping("/form/register")
+    public String getRegisterForm() {
         return "course";
     }
 
