@@ -25,7 +25,7 @@ public class CourseController {
     }
 
     @PostMapping("/register")
-    public String registerCourse(@ModelAttribute final CourseDto courseDto, final Model model) throws Exception {
+    public String registerCourse(@ModelAttribute final CourseDto courseDto, final Model model) {
         try {
             courseService.register(courseDto);
             return "redirect:/courses";

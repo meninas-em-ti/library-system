@@ -45,7 +45,7 @@ class CourseControllerTest {
   }
 
   @Test
-  void given_nullCourseDto_registerCourse_throws_NullPointerException() throws Exception {
+  void given_nullCourseDto_registerCourse_returns_a_string() throws Exception {
     when(courseServiceMock.register(null)).thenThrow(NullPointerException.class);
 
     assertThat(courseController.registerCourse(null, modelMock))
