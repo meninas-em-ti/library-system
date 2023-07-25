@@ -13,19 +13,15 @@ public class CourseService {
 
   public Boolean register(final CourseDto courseDto) throws Exception {
 
-    Boolean isCourseRegistered = false;
-
     if(courseDto == null){
-      throw new Exception("Course details is null.");
+      throw new NullPointerException("Course details is null.");
     }
 
     try {
       repository.save(courseDto.toCourse());
-      isCourseRegistered = true;
-    } catch (Exception e) {
-      throw new Exception("Error while trying to save the course in the database", e);
+      return true;
+    } catch (IllegalArgumentException e) {
+      throw new IllegalArgumentException("Error while trying to save the course in the database", e);
     }
-
-    return isCourseRegistered;
   }
 }
