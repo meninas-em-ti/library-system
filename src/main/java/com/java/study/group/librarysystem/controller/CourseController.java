@@ -16,9 +16,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("course")
 public class CourseController {
 
+    //TODO: in the course.html file: add H1 and margin and fix button in the welcome.html file.
+
+    //TODO: in the course.html: validate the form inputs
+
     private final CourseService courseService;
 
-    // delete this method after frontend changes as will use welcome page.
     @GetMapping("/form/register")
     public String getRegisterForm() {
         return "course";

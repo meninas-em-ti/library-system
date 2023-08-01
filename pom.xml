@@ -79,6 +79,12 @@
 			<version>${flyway-core.version}</version>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
 			<groupId>net.serenity-bdd</groupId>
 			<artifactId>serenity-rest-assured</artifactId>
 			<version>${serenity.version}</version>
