@@ -9,34 +9,63 @@
 <body>
 
 <div class="container">
-    <form class="row g-3" action="/course/register"  method="post">
+
+    <h2  class="text-center" style="padding: 12px">Register a new course</h2>
+
+    <form class="row g-3 needs-validation" action="/course/register"  method="post" novalidate>
         <div class="col-12">
             <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" name="name">
+            <input type="text" class="form-control" id="name" name="name" required>
+            <div class="invalid-feedback">
+                Please choose a username.
+            </div>
         </div>
         <div class="col-md-6">
             <label for="limitOfCostumers" class="form-label">Max. number of costumers</label>
-            <input type="number" class="form-control" id="limitOfCostumers" name="limitOfCostumers">
+            <input type="number" class="form-control" id="limitOfCostumers" name="limitOfCostumers" required>
         </div>
         <div class="col-md-6">
             <label for="priceOfClass" class="form-label">Price</label>
-            <input type="number" class="form-control" id="priceOfClass" name="priceOfClass">
+            <input type="number" class="form-control" id="priceOfClass" name="priceOfClass" required>
         </div>
         <div class="col-12">
             <label for="ageGroup" class="form-label">Age Group</label>
-            <input type="text" class="form-control" id="ageGroup" name="ageGroup">
+            <input type="text" class="form-control" id="ageGroup" name="ageGroup" required>
         </div>
         <div class="col-12">
             <label for="instructorName" class="form-label">Instructor Name</label>
-            <input type="text" class="form-control" id="instructorName" name="instructorName">
+            <input type="text" class="form-control" id="instructorName" name="instructorName" required>
         </div>
 
         <div class="col-12">
-            <button type="submit" class="btn btn-primary">Sign in</button>
+            <button type="submit" class="btn btn-primary" style="color: white; background-color: #900993; border-color: #900993">Register</button>
         </div>
     </form>
+
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>
 </body>
 </html>
