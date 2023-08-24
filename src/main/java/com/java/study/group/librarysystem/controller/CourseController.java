@@ -16,10 +16,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("course")
 public class CourseController {
 
-    //TODO: in the course.html file: add H1 and margin and fix button in the welcome.html file.
+    //TODO: Check TODO priorities
 
-    //TODO: in the course.html: validate the form inputs
+    //TODO: check if course details is saving the data in DB
 
+    //TODO: Check if we need to use select instead of text for instructor name field and if we need to keep the validate icon(bootstrap need-validation)
+
+    //TODO: Test course registration
+
+    //TODO: refactor welcome page
     private final CourseService courseService;
 
     @GetMapping("/form/register")
