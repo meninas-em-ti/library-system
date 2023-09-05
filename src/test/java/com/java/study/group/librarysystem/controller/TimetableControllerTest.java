@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 
+import static java.time.LocalDateTime.parse;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
@@ -35,9 +36,11 @@ class TimetableControllerTest {
 
     @Test
     void listAllCourses_returns_timetable_page() {
-        final CourseDto expectedCourseDto = new CourseDto("Computers",30,
-                LocalDateTime.parse("2022-09-26T00:12:43.482047"),"Adult",10L,
-                12,45);
+//        final CourseDto expectedCourseDto = new CourseDto("Computers",30,
+//                LocalDateTime.parse("2022-09-26T00:12:43.482047"),"Adult",10L,
+//                12,45);
+
+        final CourseDto expectedCourseDto = new CourseDto("Computers", 30, parse("2022-09-26-T00:12:43.482047"), "Adult", 10L, "Instructor Name");
 
         assertThat(timetableController.listAllCourses(modelMock)).isEqualTo("timetable");
         verify(modelMock).addAttribute("coursesDto", Arrays.asList(expectedCourseDto,expectedCourseDto,expectedCourseDto));
