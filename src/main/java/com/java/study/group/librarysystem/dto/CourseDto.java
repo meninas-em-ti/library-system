@@ -1,5 +1,6 @@
 package com.java.study.group.librarysystem.dto;
 
+import com.java.study.group.librarysystem.model.Course;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,6 +17,16 @@ public class CourseDto {
     private LocalDateTime timetable;
     private String ageGroup;
     private Long priceOfClass;
-    private int numberOfClasses;
-    private int durationOfClasses;
+    private String instructorName;
+
+    public Course toCourse(){
+        Course course = new Course();
+        course.setName(this.name);
+        course.setLimitOfCostumers(this.limitOfCostumers);
+        course.setAgeGroup(this.ageGroup);
+        course.setInstructorName(this.instructorName);
+        course.setPriceOfClass(this.priceOfClass);
+
+        return course;
+    }
 }
