@@ -26,6 +26,7 @@ public class CourseDto {
         course.setAgeGroup(this.ageGroup);
         course.setInstructorName(this.instructorName);
         course.setPriceOfClass(this.priceOfClass);
+        course.setStartDateAndTime(this.startDateAndTime);
 
         return course;
     }
