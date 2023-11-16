@@ -14,7 +14,7 @@ public class CourseDto {
 
     private String name;
     private int limitOfCostumers;
-    private LocalDateTime timetable;
+    private LocalDateTime startDateAndTime;
     private String ageGroup;
     private Long priceOfClass;
     private String instructorName;

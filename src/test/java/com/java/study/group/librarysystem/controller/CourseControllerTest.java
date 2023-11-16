@@ -32,7 +32,7 @@ class CourseControllerTest {
     CourseDto courseDto = new CourseDto();
     courseDto.setName("Story time for kids");
     courseDto.setLimitOfCostumers(10);
-    courseDto.setTimetable(LocalDateTime.parse("2022-09-26T00:12:43.482047"));
+    courseDto.setStartDateAndTime(LocalDateTime.parse("2022-09-26T00:12:43.482047"));
     courseDto.setAgeGroup("kids");
     courseDto.setPriceOfClass(25l);
     courseDto.setInstructorName("Ivone");

@@ -35,7 +35,7 @@
                 <tbody>
                     <tr th:each="course : ${coursesDto}">
                         <td th:text="${course.name}">English literature for beginners</td>
-                        <td th:text="${#temporals.format(course.timetable, 'dd-MM-yyyy HH:mm') + ' (' + #temporals.dayOfWeekName(course.timetable) + ')'}"></td>
+                        <td th:text="${#temporals.format(course.startDateAndTime, 'dd-MM-yyyy HH:mm') + ' (' + #temporals.dayOfWeekName(course.startDateAndTime) + ')'}"></td>
                         <td th:text="${course.priceOfClass}">20:00</td>
                     </tr>
                 </tbody>
