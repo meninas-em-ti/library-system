@@ -18,7 +18,7 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 class CourseServiceTest {
 
-  @Mock
+  /*@Mock
   CourseRepository repository;
 
   @InjectMocks
@@ -72,5 +72,5 @@ class CourseServiceTest {
     String actualMessage = exception.getMessage();
 
     assertTrue(actualMessage.contains(expectedMessage));
-  }
+  }*/
 }

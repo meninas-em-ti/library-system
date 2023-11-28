@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,13 +28,13 @@ public class TimetableController {
   @GetMapping("")
   public String listAllCourses(Model model){
     CourseDto courseDto = new CourseDto("Computers",30,
-            LocalDateTime.parse("2022-09-26T00:12:43.482047"),"Adult",10L,
+            Instant.parse("2020-01-23T00:00:00Z"),"Adult",10L,
             "Jack");
     List<CourseDto> courseDtoList =  new ArrayList<CourseDto>();
     List<Course> courseList = repository.findAll();
     for(Course course : courseList) {
       CourseDto courseDtoItem = new CourseDto(course.getName(),course.getLimitOfCostumers(),
-              LocalDateTime.parse("2022-09-26T00:12:43.482047"),course.getAgeGroup(),course.getPriceOfClass(),
+          Instant.parse("2020-01-23T00:00:00Z"),course.getAgeGroup(),course.getPriceOfClass(),
               course.getInstructorName());
       courseDtoList.add(courseDtoItem);
 
