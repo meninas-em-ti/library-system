@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 
 @Data
@@ -14,7 +15,7 @@ public class CourseDto {
 
     private String name;
     private int limitOfCostumers;
-    private LocalDateTime startDateAndTime;
+    private Instant startDateAndTime;
     private String ageGroup;
     private Long priceOfClass;
     private String instructorName;
