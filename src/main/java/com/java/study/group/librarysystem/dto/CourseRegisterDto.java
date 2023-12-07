@@ -7,6 +7,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
+import static java.time.LocalDateTime.*;
+
 @Data
 @NoArgsConstructor
 public class CourseRegisterDto {
@@ -25,16 +27,12 @@ public class CourseRegisterDto {
         course.setInstructorName(this.instructorName);
         course.setPriceOfClass(this.priceOfClass);
         course.setStartDateAndTime(setStartDateAndTimeFromString(this.startDateAndTime));
-
         return course;
     }
 
     private LocalDateTime setStartDateAndTimeFromString(final String startDateAndTime){
-        String pattern = "MM/dd/yyyy h:mm a";
-
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(pattern, Locale.US);
-        LocalDateTime localDateTime = LocalDateTime.parse(startDateAndTime, dateTimeFormatter);
-
-        return localDateTime;
+        final DateTimeFormatter dateTimeFormatter = DateTimeFormatter
+            .ofPattern( "MM/dd/yyyy h:mm a", Locale.US);
+        return parse(startDateAndTime, dateTimeFormatter);
     }
 }
