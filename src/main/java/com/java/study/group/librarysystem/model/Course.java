@@ -22,7 +22,7 @@ public class Course {
     private Long courseID;
     private String name;
     private int limitOfCostumers;
-    private Instant startDateAndTime;
+    private LocalDateTime startDateAndTime;
     private String ageGroup;
     private Long priceOfClass;
     private String instructorName;
