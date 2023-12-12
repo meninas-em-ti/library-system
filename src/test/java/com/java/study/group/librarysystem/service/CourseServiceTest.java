@@ -1,19 +1,19 @@
 package com.java.study.group.librarysystem.service;
 
-import com.java.study.group.librarysystem.dto.CourseDto;
+import com.java.study.group.librarysystem.dto.CourseRegisterDto;
+import com.java.study.group.librarysystem.model.Course;
 import com.java.study.group.librarysystem.repository.CourseRepository;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.time.LocalDateTime;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class CourseServiceTest {
@@ -24,20 +24,26 @@ class CourseServiceTest {
   @InjectMocks
   CourseService courseService;
 
+  @AfterEach
+  void afterEach() {
+    verifyNoMoreInteractions(repository);
+  }
+
   @Test
-  void given_a_valid_courseDto_register_returns_true() throws Exception {
-    CourseDto courseDto = new CourseDto();
-    courseDto.setName("Story time for kids");
-    courseDto.setLimitOfCostumers(10);
-    courseDto.setTimetable(LocalDateTime.parse("2022-09-26T00:12:43.482047"));
-    courseDto.setAgeGroup("kids");
-    courseDto.setPriceOfClass(25l);
-    courseDto.setInstructorName("Ivone");
+  void given_a_valid_courseDto_register_returns_true() {
+    final CourseRegisterDto courseRegisterDto = new CourseRegisterDto();
+    courseRegisterDto.setName("Story time for kids");
+    courseRegisterDto.setLimitOfCostumers(10);
+    courseRegisterDto.setStartDateAndTime("11/09/2022 12:43 AM");
+    courseRegisterDto.setAgeGroup("kids");
+    courseRegisterDto.setPriceOfClass(25l);
+    courseRegisterDto.setInstructorName("Ivone");
 
-    when(repository.save(courseDto.toCourse())).thenReturn(courseDto.toCourse());
+    final Course course = courseRegisterDto.toCourse();
+    when(repository.save(course)).thenReturn(course);
 
-    final Boolean isCourseRegistered = courseService.register(courseDto);
-    assertThat(isCourseRegistered).isTrue();
+    assertThat(courseService.register(courseRegisterDto)).isTrue();
+    verify(repository).save(course);
   }
 
   @Test
@@ -46,30 +52,31 @@ class CourseServiceTest {
       courseService.register(null);
     });
 
-    String expectedMessage = "Course details is null.";
-    String actualMessage = exception.getMessage();
+    final String expectedMessage = "Course details is null.";
+    final String actualMessage = exception.getMessage();
 
     assertTrue(actualMessage.contains(expectedMessage));
   }
 
   @Test
-  void given_validCourseDto_register_returns_false_for_database_exception() throws Exception {
-    CourseDto courseDto = new CourseDto();
-    courseDto.setName("Story time for kids");
-    courseDto.setLimitOfCostumers(10);
-    courseDto.setTimetable(LocalDateTime.parse("2022-09-26T00:12:43.482047"));
-    courseDto.setAgeGroup("kids");
-    courseDto.setPriceOfClass(25l);
-    courseDto.setInstructorName("Ivone");
+  void given_validCourseDto_register_returns_false_for_database_exception() {
+    final CourseRegisterDto courseRegisterDto = new CourseRegisterDto();
+    courseRegisterDto.setName("Story time for kids");
+    courseRegisterDto.setLimitOfCostumers(10);
+    courseRegisterDto.setStartDateAndTime("11/09/2022 12:43 AM");
+    courseRegisterDto.setAgeGroup("kids");
+    courseRegisterDto.setPriceOfClass(25l);
+    courseRegisterDto.setInstructorName("Ivone");
 
-    when(repository.save(courseDto.toCourse())).thenThrow(new IllegalArgumentException());
+    final Course course = courseRegisterDto.toCourse();
+    when(repository.save(course)).thenThrow(new IllegalArgumentException());
 
     Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-      courseService.register(courseDto);
+      courseService.register(courseRegisterDto);
     });
 
-    String expectedMessage = "Error while trying to save the course in the database";
-    String actualMessage = exception.getMessage();
+    final String expectedMessage = "Error while trying to save the course in the database";
+    final String actualMessage = exception.getMessage();
 
     assertTrue(actualMessage.contains(expectedMessage));
   }

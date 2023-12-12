@@ -36,7 +36,7 @@ class TimetableControllerIT {
 
     @Test
     void getRequest_success() {
-        final Response response = commonSteps.makeGetRequestToApplication("courses/timetable");
+        final Response response = commonSteps.makeGetRequestToApplication("courses/");
         commonSteps.verifyResponseStatusCode(response, HttpStatus.SC_OK);
         timetableControllerSteps.verifyResponseBodyHtml(response, ContentType.HTML);
     }

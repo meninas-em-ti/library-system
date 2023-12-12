@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.time.LocalDateTime;
@@ -33,7 +31,7 @@ public class TimetableController {
     List<Course> courseList = repository.findAll();
     for(Course course : courseList) {
       CourseDto courseDtoItem = new CourseDto(course.getName(),course.getLimitOfCostumers(),
-              LocalDateTime.parse("2022-09-26T00:12:43.482047"),course.getAgeGroup(),course.getPriceOfClass(),
+          course.getStartDateAndTime(),course.getAgeGroup(),course.getPriceOfClass(),
               course.getInstructorName());
       courseDtoList.add(courseDtoItem);
 
@@ -44,5 +42,4 @@ public class TimetableController {
 
     return "timetable";
   }
-
 }

@@ -1,6 +1,6 @@
 package com.java.study.group.librarysystem.controller;
 
-import com.java.study.group.librarysystem.dto.CourseDto;
+import com.java.study.group.librarysystem.dto.CourseRegisterDto;
 import com.java.study.group.librarysystem.service.CourseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -35,7 +35,7 @@ public class CourseController {
     }
 
     @PostMapping("/register")
-    public String registerCourse(@ModelAttribute final CourseDto courseDto, final Model model) {
+    public String registerCourse(@ModelAttribute final CourseRegisterDto courseDto, final Model model) {
         try {
             courseService.register(courseDto);
             return "redirect:/courses";

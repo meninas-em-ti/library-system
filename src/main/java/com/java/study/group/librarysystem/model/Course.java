@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.time.Instant;
 import java.time.LocalDateTime;
 
 @Data
@@ -21,7 +22,7 @@ public class Course {
     private Long courseID;
     private String name;
     private int limitOfCostumers;
-    private LocalDateTime timetable;
+    private LocalDateTime startDateAndTime;
     private String ageGroup;
     private Long priceOfClass;
     private String instructorName;

@@ -1,20 +1,20 @@
 package com.java.study.group.librarysystem.dto;
 
 import com.java.study.group.librarysystem.model.Course;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+
+import static java.time.LocalDateTime.*;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class CourseDto {
-
+public class CourseRegisterDto {
     private String name;
     private int limitOfCostumers;
-    private LocalDateTime startDateAndTime;
+    private String startDateAndTime;
     private String ageGroup;
     private Long priceOfClass;
     private String instructorName;
@@ -26,8 +26,13 @@ public class CourseDto {
         course.setAgeGroup(this.ageGroup);
         course.setInstructorName(this.instructorName);
         course.setPriceOfClass(this.priceOfClass);
-        course.setStartDateAndTime(this.startDateAndTime);
-
+        course.setStartDateAndTime(setStartDateAndTimeFromString(this.startDateAndTime));
         return course;
+    }
+
+    private LocalDateTime setStartDateAndTimeFromString(final String startDateAndTime){
+        final DateTimeFormatter dateTimeFormatter = DateTimeFormatter
+            .ofPattern( "MM/dd/yyyy h:mm a", Locale.US);
+        return parse(startDateAndTime, dateTimeFormatter);
     }
 }

@@ -1,6 +1,7 @@
 package com.java.study.group.librarysystem.service;
 
 import com.java.study.group.librarysystem.dto.CourseDto;
+import com.java.study.group.librarysystem.dto.CourseRegisterDto;
 import com.java.study.group.librarysystem.repository.CourseRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -11,7 +12,7 @@ public class CourseService {
 
   private final CourseRepository repository;
 
-  public Boolean register(final CourseDto courseDto) throws Exception {
+  public Boolean register(final CourseRegisterDto courseDto) {
 
     if(courseDto == null){
       throw new NullPointerException("Course details is null.");
