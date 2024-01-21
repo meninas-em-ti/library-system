@@ -31,12 +31,6 @@
             </thead>
             <tbody>
                 <tr th:each="course : ${coursesDto}">
-                    <td>
-                        <span class="custom-checkbox">
-                            <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                            <label for="checkbox1"></label>
-                        </span>
-                    </td>
                     <td th:text="${course.name}">English literature for beginners</td>
                     <td th:text="${#temporals.format(course.startDateAndTime, 'dd-MM-yyyy HH:mm') + ' (' + #temporals.dayOfWeekName(course.startDateAndTime) + ')'}">date</td>
                     <td th:text="${course.priceOfClass}">20:00</td>
