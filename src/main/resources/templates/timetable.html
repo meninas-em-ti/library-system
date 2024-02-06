@@ -21,7 +21,6 @@
 
         <!--=========================== Content ===================================-->
 
-        <h1 class="content_title">Library Timetable 2022</h1>
         <div class="container">
             <div class="table-wrapper">
                 <div class="table-title">
@@ -48,8 +47,8 @@
                         <td th:text="${course.limitOfCostumers}">Limit of customers</td>
                         <td th:text="${course.instructorName}">instructor Name</td>
                         <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                            <a href="#editEmployeeModal" data-bs-toggle="modal" data-bs-target="#editEmployeeModal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                            <a href="#deleteEmployeeModal" data-bs-toggle="modal" data-bs-target="#deleteEmployeeModal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                         </td>
                     </tr>
                     </tbody>
@@ -69,13 +68,13 @@
             </div>
         </div>
         <!-- Edit Modal HTML -->
-        <div id="editEmployeeModal" class="modal fade">
+        <div id="editEmployeeModal" class="modal">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form>
                         <div class="modal-header">
                             <h4 class="modal-title">Edit Course details</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
@@ -83,19 +82,44 @@
                                 <input type="text" class="form-control" id="name" name="name" required>
                             </div>
                             <div class="form-group">
-                                <label>limitOfCustomers</label>
+                                <label>Limit of customers</label>
                                 <input type="number" class="form-control" id="limitOfCustomers" name="limitOfCustomers" required>
                             </div>
                             <div class="form-group">
-                                <label>priceOfClass</label>
-                                <input type="number" class="form-control" id="priceOfClass" name="priceOfClass" required>                    </div>
+                                <label>Price of class</label>
+                                <input type="number" class="form-control" id="priceOfClass" name="priceOfClass" required>
+                            </div>
                             <div class="form-group">
-                                <label>Phone</label>
-                                <input type="text" class="form-control" required>
+                                <label for="ageGroup" class="form-label">Age group</label>
+                                <select class="form-select" id="ageGroup" name="ageGroup" required>
+                                    <option selected disabled value="">Please select one age group</option>
+                                    <option value="kids">Kids</option>
+                                    <option value="teens">Teens</option>
+                                    <option value="adults">Adults</option>
+                                    <option value="seniors">Seniors</option>
+                                    <div class="invalid-feedback">
+                                        Please select the age group.
+                                    </div>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="instructorName" class="form-label">Instructor name</label>
+                                <input type="text" class="form-control" id="instructorName" name="instructorName">
+                            </div>
+                            <div class="form-group">
+                                <label for="startDateAndTime" class="form-label">Date and time</label>
+                                <div class="form-group">
+                                    <div class='input-group date' id='datetimepicker1'>
+                                        <input type='text' class="form-control" id="startDateAndTime" name="startDateAndTime"/>
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                            <input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancel">
                             <input type="submit" class="btn btn-success" value="Add">
                         </div>
                     </form>
@@ -109,14 +133,14 @@
                     <form>
                         <div class="modal-header">
                             <h4 class="modal-title">Delete Employee</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body">
                             <p>Are you sure you want to delete these Records?</p>
                             <p class="text-warning"><small>This action cannot be undone.</small></p>
                         </div>
                         <div class="modal-footer">
-                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                            <input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancel">
                             <input type="submit" class="btn btn-danger" value="Delete">
                         </div>
                     </form>
