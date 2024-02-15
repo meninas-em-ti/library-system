@@ -1,5 +1,3 @@
-
-
 Feature: Course
   As a system administrator
   I want to manage courses
