@@ -45,6 +45,13 @@ The classes can be paid for weekly, or a course bought and paid for before it st
 - Integration Tests
 - Figma
 
+## PENDING TO DO 
+- The current application only saves the start date and we calculate the duration of the course without taking bank holidays into consideration. We need to
+  refactor the application to validate this case.
+- Check if we need to use select instead of text for instructor name field register course page and if we need to keep the validate icon(bootstrap need-validation)
+Refactor welcome page
+
+
 
 We can run using h2
 Run:

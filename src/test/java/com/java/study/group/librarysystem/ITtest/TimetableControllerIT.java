@@ -5,16 +5,17 @@ import com.java.study.group.librarysystem.ITtest.steps.TimetableControllerSteps;
 import com.java.study.group.librarysystem.LibrarySystemApplication;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import jakarta.annotation.PostConstruct;
+import net.serenitybdd.annotations.Steps;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.serenitybdd.rest.SerenityRest;
-import net.thucydides.core.annotations.Steps;
+
 import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 
-import javax.annotation.PostConstruct;
 
 @ExtendWith(SerenityJUnit5Extension.class)
 @SpringBootTest(classes = LibrarySystemApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -36,7 +37,7 @@ class TimetableControllerIT {
 
     @Test
     void getRequest_success() {
-        final Response response = commonSteps.makeGetRequestToApplication("courses/timetable");
+        final Response response = commonSteps.makeGetRequestToApplication("courses");
         commonSteps.verifyResponseStatusCode(response, HttpStatus.SC_OK);
         timetableControllerSteps.verifyResponseBodyHtml(response, ContentType.HTML);
     }

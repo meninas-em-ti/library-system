@@ -1,7 +1,8 @@
 package com.java.study.group.librarysystem.ITtest.steps;
 
 import io.restassured.response.Response;
-import net.thucydides.core.annotations.Step;
+import net.serenitybdd.annotations.Step;
+
 
 import static net.serenitybdd.rest.SerenityRest.given;
 import static org.hamcrest.Matchers.is;

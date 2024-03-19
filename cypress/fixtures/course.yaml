@@ -1,0 +1,84 @@
+storytime:
+  course: "Storytime for kids"
+  limit: "40"
+  price: "5.00"
+  age: "Kids"
+  instructor: Joyce
+  datetime: "2024-02-10T00:12:43.482047"
+literature:
+  course: "English literature for beginners"
+  limit: "30"
+  price: "10.00"
+  age: Teens
+  instructor: Raquel
+  datetime: "2023-12-02T00:12:43.482047"
+writing:
+  course: "Creative Writing for beginners"
+  limit: "30"
+  price: "15.00"
+  age: "Teens"
+  instructor: Bruna
+  datetime: "2023-11-20T00:12:43.482047"
+computers:
+  course: "Computers for beginners"
+  limit: "30"
+  price: "20.00"
+  age: "Adults"
+  instructor: Elaine
+  datetime: "2023-11-24T00:12:43.482047"
+technology:
+  course: "Technology for the over 60s"
+  limit: "20"
+  price: "5.00"
+  age: "Over 60s"
+  instructor: "Ivone"
+  datetime: "2023-11-26T00:12:43.482047"
+database:
+  course: "DataBase for Adults"
+  limit: "30"
+  price: "45.00"
+  age: "Adults"
+  instructor: Joyce
+  datetime: "2024-02-10T00:12:43.482047"
+no_name:
+  course: ""
+  limit: "20"
+  price: "15.00"
+  age: "Over 60s"
+  instructor: "Joyce"
+  datetime: "2023-11-26T00:12:43.482047"
+no_limit:
+  course: "Mathematics"
+  limit: ""
+  price: "15.00"
+  age: "Over 60s"
+  instructor: "Raquel"
+  datetime: "2023-11-26T00:12:43.482047"
+no_price:
+  course: "Mathematics"
+  limit: "30"
+  price: ""
+  age: "Over 60s"
+  instructor: "Bruna"
+  datetime: "2023-11-26T00:12:43.482047"
+no_age:
+  course: "Mathematics"
+  limit: "30"
+  price: "25.00"
+  age: ""
+  instructor: "Ivone"
+  datetime: "2023-11-26T00:12:43.482047"
+no_instructor:
+  course: "Mathematics"
+  limit: "30"
+  price: "25.00"
+  age: "Over 60s"
+  instructor: ""
+  datetime: "2023-11-26T00:12:43.482047"
+no_date:
+  course: "Mathematics"
+  limit: "30"
+  price: "25.00"
+  age: "Over 60s"
+  instructor: "Elaine"
+  datetime: ""
