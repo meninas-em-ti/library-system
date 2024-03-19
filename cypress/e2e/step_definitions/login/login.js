@@ -17,5 +17,5 @@ When("I enter my username and password", () => {
 })
 
 Then("I have a successful login", () => {
-    cy.contains('Welcome!!!!').should('be.visible')
+    cy.get('.btn-primary').contains("New course")
 })
