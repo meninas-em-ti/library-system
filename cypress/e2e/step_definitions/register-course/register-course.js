@@ -29,6 +29,11 @@ When("I click the Register button", () => {
 
 Then("I should see the new course in the list on the main page", () =>{
     cy.contains('Library Timetable 2022').should('be.visible')
-    //cy.get('tr:contains(Storytime for kids)').find('td:contains(Storytime for kids)')
-
+    cy.get('tr')
+    cy.get('td:contains(Storytime for kids)').last()
+    cy.get('td:contains(29-02-2024 23:30)').last()
+    cy.get('td:contains(25)').last()
+    cy.get('td:contains(kids)').last()
+    cy.get('td:contains(0)').last()
+    cy.get('td:contains(Bruna)').last()
 })
