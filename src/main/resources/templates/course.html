@@ -60,14 +60,20 @@
         </div>
         <div class="col-md-6">
             <label for="instructorName" class="form-label">Instructor Name</label>
-            <input type="text" class="form-control" id="instructorName" name="instructorName">
+            <input type="text" class="form-control" id="instructorName" name="instructorName" required>
+            <div class="invalid-feedback">
+                Please select the instructor name.
+            </div>
         </div>
 
         <div class="col-md-6">
             <label for="startDateAndTime" class="form-label">Date and time</label>
             <div class="form-group">
                 <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" id="startDateAndTime" name="startDateAndTime"/>
+                    <input type='text' class="form-control" id="startDateAndTime" name="startDateAndTime" required/>
+                    <div class="invalid-feedback">
+                        Please select a date.
+                    </div>
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
