@@ -2,6 +2,8 @@ package com.java.study.group.librarysystem.dto;
 
 import com.java.study.group.librarysystem.model.Course;
 import org.junit.jupiter.api.Test;
+
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
@@ -21,7 +23,7 @@ class CourseRegisterDtoTest {
     expectedCourse.setLimitOfCostumers(10);
     expectedCourse.setStartDateAndTime(LocalDateTime.parse("11/09/2022 12:43 AM", dateTimeFormatter));
     expectedCourse.setAgeGroup("kids");
-    expectedCourse.setPriceOfClass(25l);
+    expectedCourse.setPriceOfClass(new BigDecimal(25.5));
     expectedCourse.setInstructorName("Ivone");
 
     courseRegisterDto = new CourseRegisterDto();
@@ -29,7 +31,7 @@ class CourseRegisterDtoTest {
     courseRegisterDto.setLimitOfCostumers(10);
     courseRegisterDto.setStartDateAndTime("11/09/2022 12:43 AM");
     courseRegisterDto.setAgeGroup("kids");
-    courseRegisterDto.setPriceOfClass(25l);
+    courseRegisterDto.setPriceOfClass(new BigDecimal(25.5));
     courseRegisterDto.setInstructorName("Ivone");
 
     assertThat(courseRegisterDto.toCourse()).isEqualTo(expectedCourse);
