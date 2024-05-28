@@ -33,16 +33,16 @@
         </div>
         <div class="col-md-6">
             <label for="limitOfCustomers" class="form-label">Max. number of customers</label>
-            <input type="number" class="form-control" id="limitOfCustomers" name="limitOfCustomers" required>
+            <input type="number" min="1" class="form-control" id="limitOfCustomers" name="limitOfCustomers" required>
             <div class="invalid-feedback">
-                Please select maximum quantity of customers.
+                Please fill the number of customers correctly.
             </div>
         </div>
         <div class="col-md-6">
             <label for="priceOfClass" class="form-label">Price</label>
-            <input type="number" class="form-control" id="priceOfClass" name="priceOfClass" required>
+            <input type="number" min="0"  class="form-control" id="priceOfClass" name="priceOfClass" required>
             <div class="invalid-feedback">
-                Please type a price for the course.
+                Please fill the price correctly.
             </div>
         </div>
         <div class="col-md-6">
