@@ -7,7 +7,7 @@ import com.java.study.group.librarysystem.service.exceptions.CourseAlreadyExistE
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -21,10 +21,8 @@ public class CourseService {
             throw new NullPointerException("Course details is null.");
         }
 
-        if (verifyCourseRegister(courseDto.getName())) {
-            throw new CourseAlreadyExistException("Course is already registered");
-        }
         try {
+            verifyCourseRegister(courseDto.getName());
             repository.save(courseDto.toCourse());
             return true;
         } catch (IllegalArgumentException e) {
@@ -35,12 +33,12 @@ public class CourseService {
 
 
         public Boolean verifyCourseRegister (String name){
-            Optional<Course> courseRegistered = this.repository.findByName(name);
+            List<Course> courseRegistered = this.repository.findByName(name);
             boolean isCourseRegistered = false;
-            if (courseRegistered.isPresent()) {
+            if (courseRegistered.size() > 0) {
                 isCourseRegistered = true;
                 System.out.println("checking if course already exist");
-                //throw new CourseAlreadyExistException("Course is already registered");
+                throw new CourseAlreadyExistException("Course is already registered");
 
             }
 
