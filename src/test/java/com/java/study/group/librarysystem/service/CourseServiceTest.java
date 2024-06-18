@@ -10,6 +10,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.math.BigDecimal;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -36,7 +38,7 @@ class CourseServiceTest {
     courseRegisterDto.setLimitOfCostumers(10);
     courseRegisterDto.setStartDateAndTime("11/09/2022 12:43 AM");
     courseRegisterDto.setAgeGroup("kids");
-    courseRegisterDto.setPriceOfClass(25l);
+    courseRegisterDto.setPriceOfClass(new BigDecimal(25));
     courseRegisterDto.setInstructorName("Ivone");
 
     final Course course = courseRegisterDto.toCourse();
@@ -65,7 +67,7 @@ class CourseServiceTest {
     courseRegisterDto.setLimitOfCostumers(10);
     courseRegisterDto.setStartDateAndTime("11/09/2022 12:43 AM");
     courseRegisterDto.setAgeGroup("kids");
-    courseRegisterDto.setPriceOfClass(25l);
+    courseRegisterDto.setPriceOfClass(new BigDecimal(25));
     courseRegisterDto.setInstructorName("Ivone");
 
     final Course course = courseRegisterDto.toCourse();

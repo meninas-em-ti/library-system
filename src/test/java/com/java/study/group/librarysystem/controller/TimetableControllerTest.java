@@ -10,6 +10,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.ui.Model;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
@@ -36,7 +37,7 @@ class TimetableControllerTest {
     @Test
     void listAllCourses_returns_timetable_page() {
         final CourseDto expectedCourseDto = new CourseDto("Computers",30,
-            LocalDateTime.parse("2022-09-26T00:12:43.482047"),"Adult",10L, "Bruna");
+            LocalDateTime.parse("2022-09-26T00:12:43.482047"),"Adult",new BigDecimal(10), "Bruna");
 
         when(repository.findAll()).thenReturn(List.of(expectedCourseDto.toCourse()));
 

@@ -10,6 +10,8 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.ui.Model;
 
+import java.math.BigDecimal;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
@@ -38,7 +40,7 @@ class CourseControllerTest {
     courseRegisterDto.setLimitOfCostumers(10);
     courseRegisterDto.setStartDateAndTime("11/09/2022 12:43 AM");
     courseRegisterDto.setAgeGroup("kids");
-    courseRegisterDto.setPriceOfClass(25l);
+    courseRegisterDto.setPriceOfClass(new BigDecimal(25));
     courseRegisterDto.setInstructorName("Ivone");
 
     when(courseServiceMock.register(courseRegisterDto)).thenReturn(true);

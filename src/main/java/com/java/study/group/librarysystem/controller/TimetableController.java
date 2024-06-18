@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,7 +26,7 @@ public class TimetableController {
   @GetMapping("")
   public String listAllCourses(Model model){
     CourseDto courseDto = new CourseDto("Computers",30,
-            LocalDateTime.parse("2022-09-26T00:12:43.482047"),"Adult",10L,
+            LocalDateTime.parse("2022-09-26T00:12:43.482047"),"Adult",new BigDecimal(10),
             "Jack");
     List<CourseDto> courseDtoList =  new ArrayList<CourseDto>();
     List<Course> courseList = repository.findAll();

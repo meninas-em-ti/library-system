@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
@@ -24,7 +25,7 @@ public class Course {
     private int limitOfCostumers;
     private LocalDateTime startDateAndTime;
     private String ageGroup;
-    private Long priceOfClass;
+    private BigDecimal priceOfClass;
     private String instructorName;
 
 }
