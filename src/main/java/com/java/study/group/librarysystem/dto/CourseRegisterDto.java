@@ -3,6 +3,7 @@ package com.java.study.group.librarysystem.dto;
 import com.java.study.group.librarysystem.model.Course;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
@@ -16,7 +17,7 @@ public class CourseRegisterDto {
     private int limitOfCostumers;
     private String startDateAndTime;
     private String ageGroup;
-    private Long priceOfClass;
+    private BigDecimal priceOfClass;
     private String instructorName;
 
     public Course toCourse(){

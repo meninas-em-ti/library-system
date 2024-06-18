@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.checkerframework.checker.units.qual.C;
 
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
@@ -23,7 +24,7 @@ public class Course {
     @Column(name = "start_date_and_time")
     private LocalDateTime startDateAndTime;
     private String ageGroup;
-    private Long priceOfClass;
+    private BigDecimal priceOfClass;
     @Column(name = "instructor_name")
     private String instructorName;
 
