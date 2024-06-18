@@ -13,7 +13,7 @@ public interface CourseRepository extends JpaRepository<Course,Long> {
     List<Course> findByName(String name);
 
     @Query(value = "select * from course where instructor_name=:instructorName  " +
-            " and start_date_and_time between :startDate and :endDate", nativeQuery = true)
+            " and start_date_and_time > :startDate and start_date_and_time < :endDate", nativeQuery = true)
     List<Course> getListCourse(String instructorName, LocalDateTime startDate, LocalDateTime endDate);
 }
 
