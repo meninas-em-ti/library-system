@@ -4,9 +4,11 @@ import com.java.study.group.librarysystem.dto.CourseRegisterDto;
 import com.java.study.group.librarysystem.model.Course;
 import com.java.study.group.librarysystem.repository.CourseRepository;
 import com.java.study.group.librarysystem.service.exceptions.CourseAlreadyExistException;
+import com.java.study.group.librarysystem.service.exceptions.InstructorUnavailableException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -22,8 +24,11 @@ public class CourseService {
         }
 
         try {
-            verifyCourseRegister(courseDto.getName());
-            repository.save(courseDto.toCourse());
+            var course = courseDto.toCourse();
+
+            verifyCourseRegister(course.getName());
+            isInstructorAvailable(course.getInstructorName(), course.getStartDateAndTime());
+            repository.save(course);
             return true;
         } catch (IllegalArgumentException e) {
             throw new IllegalArgumentException("Error while trying to save the course in the database", e);
@@ -32,7 +37,7 @@ public class CourseService {
     }
 
 
-        public Boolean verifyCourseRegister (String name){
+        public Boolean verifyCourseRegister(String name) {
             List<Course> courseRegistered = this.repository.findByName(name);
             boolean isCourseRegistered = false;
             if (courseRegistered.size() > 0) {
@@ -43,6 +48,18 @@ public class CourseService {
             }
 
             return isCourseRegistered;
+        }
+
+        public Boolean isInstructorAvailable(String instructorName, LocalDateTime startDate) {
+
+            List<Course> courseList = this.repository.getListCourse(instructorName
+                    , startDate.minusHours(1L), startDate.plusHours(1l));
+
+            if(!courseList.isEmpty()) {
+                throw new InstructorUnavailableException(" Instructor is unavailable");
+            }
+
+            return true;
         }
     }
 
