@@ -40,9 +40,11 @@ public class CourseController {
             courseService.register(courseDto);
             return "redirect:/courses";
         } catch (Exception exception) {
-            model.addAttribute("error", exception.getMessage() + " Error to register course");
+            String exceptionMessage = exception.getMessage();
+            model.addAttribute("errorMessage",  " Error to register course: "
+                    + exceptionMessage );
+            return "error";
         }
 
-        return "course";
     }
 }
