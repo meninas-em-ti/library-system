@@ -72,6 +72,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form>
+                        <!--<form action="#" th:action="@{/courses}" th:object="${coursesDto}"  method="put">-->
                         <div class="modal-header">
                             <h4 class="modal-title">Edit Course details</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
@@ -79,19 +80,18 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" class="form-control" id="name" name="name" required>
-                            </div>
+                                <input type="text" class="form-control" id="name" th:value="${coursesDto[0].name}" name="name" required>                            </div>
                             <div class="form-group">
                                 <label>Limit of customers</label>
-                                <input type="number" class="form-control" id="limitOfCustomers" name="limitOfCustomers" required>
+                                <input type="number" class="form-control" id="limitOfCostumers" th:value="${coursesDto[0].limitOfCostumers}" name="limitOfCostumers" required>
                             </div>
                             <div class="form-group">
                                 <label>Price of class</label>
-                                <input type="number" class="form-control" id="priceOfClass" name="priceOfClass" required>
+                                <input type="number" class="form-control" id="priceOfClass" th:value="${coursesDto[0].priceOfClass}" name="priceOfClass" required>
                             </div>
                             <div class="form-group">
                                 <label for="ageGroup" class="form-label">Age group</label>
-                                <select class="form-select" id="ageGroup" name="ageGroup" required>
+                                <select class="form-select" id="ageGroup" th:value="${coursesDto[0].ageGroup}" name="ageGroup" required>
                                     <option selected disabled value="">Please select one age group</option>
                                     <option value="kids">Kids</option>
                                     <option value="teens">Teens</option>
@@ -104,13 +104,13 @@
                             </div>
                             <div class="form-group">
                                 <label for="instructorName" class="form-label">Instructor name</label>
-                                <input type="text" class="form-control" id="instructorName" name="instructorName">
+                                <input type="text" class="form-control" id="instructorName" th:value="${coursesDto[0].instructorName}" name="instructorName">
                             </div>
                             <div class="form-group">
                                 <label for="startDateAndTime" class="form-label">Date and time</label>
                                 <div class="form-group">
                                     <div class='input-group date' id='datetimepicker1'>
-                                        <input type='text' class="form-control" id="startDateAndTime" name="startDateAndTime"/>
+                                        <input type='text' class="form-control" id="startDateAndTime" th:value="${coursesDto[0].startDateAndTime}" name="startDateAndTime"/>
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
