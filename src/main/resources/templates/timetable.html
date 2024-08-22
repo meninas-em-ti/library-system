@@ -26,7 +26,7 @@
                 <div class="table-title">
                     <h1 class="content_title">Library Timetable 2022</h1>
                 </div>
-                <table class="table table-striped table-hover">
+                <table id="courseTable" class="table table-striped table-hover">
                     <thead>
                     <tr>
                         <th>Course Name</th>
@@ -39,7 +39,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="course : ${coursesDto}">
+                    <tr th:each="course : ${coursesDto}" onclick="getRowData(this)">
                         <td th:text="${course.name}">English literature for beginners</td>
                         <td th:text="${#temporals.format(course.startDateAndTime, 'dd-MM-yyyy HH:mm') + ' (' + #temporals.dayOfWeekName(course.startDateAndTime) + ')'}">date</td>
                         <td th:text="${course.priceOfClass}">20:00</td>
@@ -68,7 +68,7 @@
             </div>
         </div>
         <!-- Edit Modal HTML -->
-        <div id="editEmployeeModal" class="modal">
+        <div id="editEmployeeModal" class="modal" >
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form>
@@ -166,6 +166,36 @@
             </symbol>
         </svg>
 
+        <script>
+        function getRowData(row) {
+
+            var rowIndex = row.rowIndex - 1;
+            var cells = row.getElementsByTagName("td");
+            var courseData = {
+                name: cells[0].innerText,
+                limitOfCostumers: cells[4].innerText,
+                priceOfClass: cells[2].innerText,
+                ageGroup: cells[3].innerText,
+                instructorName: cells[5].innerText,
+                startDateAndTime: cells[1].innerText,
+                index: rowIndex
+            };
+            editRow(courseData);
+        }
+
+        function editRow(courseData) {
+            var table = document.getElementById("courseTable");
+            var row = table.rows[courseData.index + 1];
+
+            document.getElementById('instructorName').value = courseData.instructorName;
+            document.getElementById('startDateAndTime').value = courseData.startDateAndTime;
+            document.getElementById('limitOfCostumers').value = courseData.limitOfCostumers;
+            document.getElementById('name').value = courseData.name;
+<!--            document.getElementById('ageGroup').value = courseData.ageGroup;-->
+            document.getElementById('instructorName').value = courseData.instructorName;
+
+        }
+    </script>
         <div th:replace="~{base :: footer}"></div>
     </body>
 </html>
