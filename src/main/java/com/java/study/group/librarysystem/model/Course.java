@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.checkerframework.checker.units.qual.C;
 
 
 import java.math.BigDecimal;
@@ -20,6 +19,7 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long courseID;
     private String name;
+    @Column(name = "limit_of_customers")
     private int limitOfCostumers;
     @Column(name = "start_date_and_time")
     private LocalDateTime startDateAndTime;
