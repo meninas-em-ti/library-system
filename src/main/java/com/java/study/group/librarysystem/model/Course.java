@@ -20,7 +20,7 @@ public class Course {
     private Long courseID;
     private String name;
     @Column(name = "limit_of_customers")
-    private int limitOfCostumers;
+    private int limitOfCustomers;
     @Column(name = "start_date_and_time")
     private LocalDateTime startDateAndTime;
     private String ageGroup;

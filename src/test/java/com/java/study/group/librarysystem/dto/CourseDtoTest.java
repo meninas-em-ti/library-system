@@ -15,7 +15,7 @@ class CourseDtoTest {
   @Test
   void toCourse() {
     courseDto.setName("English Course");
-    courseDto.setLimitOfCostumers(10);
+    courseDto.setLimitOfCustomers(10);
     courseDto.setStartDateAndTime(LocalDateTime.parse("2022-09-26T00:12:43.482047"));
     courseDto.setAgeGroup("teens");
     courseDto.setPriceOfClass(new BigDecimal(10));
@@ -23,7 +23,7 @@ class CourseDtoTest {
 
     final Course expectedCourse = new Course();
     expectedCourse.setName("English Course");
-    expectedCourse.setLimitOfCostumers(10);
+    expectedCourse.setLimitOfCustomers(10);
     expectedCourse.setStartDateAndTime(LocalDateTime.parse("2022-09-26T00:12:43.482047"));
     expectedCourse.setAgeGroup("teens");
     expectedCourse.setPriceOfClass(new BigDecimal(10));

@@ -33,7 +33,7 @@
                 <th>Time</th>
                 <th>Price</th>
                 <th>ageGroup</th>
-                <th>limitOfCostumers</th>
+                <th>limitOfCustomers</th>
                 <th>instructorName</th>
                 <th>Actions</th>
             </tr>
@@ -44,7 +44,7 @@
                 <td th:text="${#temporals.format(course.startDateAndTime, 'dd-MM-yyyy HH:mm') + ' (' + #temporals.dayOfWeekName(course.startDateAndTime) + ')'}">date</td>
                 <td th:text="${course.priceOfClass}">20:00</td>
                 <td th:text="${course.ageGroup}">Age group</td>
-                <td th:text="${course.limitOfCostumers}">Limit of customers</td>
+                <td th:text="${course.limitOfCustomers}">Limit of customers</td>
                 <td th:text="${course.instructorName}">instructor Name</td>
                 <td>
                     <a href="#editEmployeeModal" data-bs-toggle="modal" data-bs-target="#editEmployeeModal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
@@ -83,7 +83,7 @@
                         <input type="text" class="form-control" id="name" name="name" required>                            </div>
                     <div class="form-group">
                         <label>Limit of customers</label>
-                        <input type="number" class="form-control" id="limitOfCostumers" name="limitOfCostumers" required>
+                        <input type="number" class="form-control" id="limitOfCustomers" name="limitOfCustomers" required>
                     </div>
                     <div class="form-group">
                         <label>Price of class</label>
@@ -172,7 +172,7 @@
             var cells = row.getElementsByTagName("td");
             var courseData = {
                 name: cells[0].innerText,
-                limitOfCostumers: cells[4].innerText,
+                limitOfCustomers: cells[4].innerText,
                 priceOfClass: cells[2].innerText,
                 ageGroup: cells[3].innerText,
                 instructorName: cells[5].innerText,
@@ -189,7 +189,7 @@
             document.getElementById('instructorName').value = courseData.instructorName;
             document.getElementById('startDateAndTime').value = courseData.startDateAndTime;
             document.getElementById('priceOfClass').value = courseData.priceOfClass;
-            document.getElementById('limitOfCostumers').value = courseData.limitOfCostumers;
+            document.getElementById('limitOfCustomers').value = courseData.limitOfCustomers;
             document.getElementById('name').value = courseData.name;
             let selectAgeGroup = document.getElementById('ageGroup');
             selectAgeGroup.value = courseData.ageGroup;

@@ -14,7 +14,7 @@ import static java.time.LocalDateTime.*;
 @NoArgsConstructor
 public class CourseRegisterDto {
     private String name;
-    private int limitOfCostumers;
+    private int limitOfCustomers;
     private String startDateAndTime;
     private String ageGroup;
     private BigDecimal priceOfClass;
@@ -23,7 +23,7 @@ public class CourseRegisterDto {
     public Course toCourse(){
         Course course = new Course();
         course.setName(this.name);
-        course.setLimitOfCostumers(this.limitOfCostumers);
+        course.setLimitOfCustomers(this.limitOfCustomers);
         course.setAgeGroup(this.ageGroup);
         course.setInstructorName(this.instructorName);
         course.setPriceOfClass(this.priceOfClass);

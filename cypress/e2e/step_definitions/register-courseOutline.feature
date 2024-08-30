@@ -32,7 +32,7 @@ Feature: Course
     Examples:
       |   code              | text                              |
       | "no_name"           | "Name field is required"          |
-      | "no_limit"          | "Limit of costumers is required"  |
+      | "no_limit"          | "Limit of customers is required"  |
       | "no_price"          | "Price is required"               |
       | "no_age"            | "Age group is required"           |
       | "no_instructor"     | "Instructor is required"          |

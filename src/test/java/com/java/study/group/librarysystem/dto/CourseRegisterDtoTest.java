@@ -20,7 +20,7 @@ class CourseRegisterDtoTest {
 
     final Course expectedCourse = new Course();
     expectedCourse.setName("Story time for kids");
-    expectedCourse.setLimitOfCostumers(10);
+    expectedCourse.setLimitOfCustomers(10);
     expectedCourse.setStartDateAndTime(LocalDateTime.parse("11/09/2022 12:43 AM", dateTimeFormatter));
     expectedCourse.setAgeGroup("kids");
     expectedCourse.setPriceOfClass(new BigDecimal(25.5));
@@ -28,7 +28,7 @@ class CourseRegisterDtoTest {
 
     courseRegisterDto = new CourseRegisterDto();
     courseRegisterDto.setName("Story time for kids");
-    courseRegisterDto.setLimitOfCostumers(10);
+    courseRegisterDto.setLimitOfCustomers(10);
     courseRegisterDto.setStartDateAndTime("11/09/2022 12:43 AM");
     courseRegisterDto.setAgeGroup("kids");
     courseRegisterDto.setPriceOfClass(new BigDecimal(25.5));
