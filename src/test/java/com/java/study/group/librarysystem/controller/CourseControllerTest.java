@@ -37,7 +37,7 @@ class CourseControllerTest {
   void given_a_courseDto_registerCourse_returns_a_string(){
     final CourseRegisterDto courseRegisterDto = new CourseRegisterDto();
     courseRegisterDto.setName("Story time for kids");
-    courseRegisterDto.setLimitOfCostumers(10);
+    courseRegisterDto.setLimitOfCustomers(10);
     courseRegisterDto.setStartDateAndTime("11/09/2022 12:43 AM");
     courseRegisterDto.setAgeGroup("kids");
     courseRegisterDto.setPriceOfClass(new BigDecimal(25));

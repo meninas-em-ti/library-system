@@ -35,7 +35,7 @@ class CourseServiceTest {
   void given_a_valid_courseDto_register_returns_true() {
     final CourseRegisterDto courseRegisterDto = new CourseRegisterDto();
     courseRegisterDto.setName("Story time for kids");
-    courseRegisterDto.setLimitOfCostumers(10);
+    courseRegisterDto.setLimitOfCustomers(10);
     courseRegisterDto.setStartDateAndTime("11/09/2022 12:43 AM");
     courseRegisterDto.setAgeGroup("kids");
     courseRegisterDto.setPriceOfClass(new BigDecimal(25));
@@ -64,7 +64,7 @@ class CourseServiceTest {
   void given_validCourseDto_register_returns_false_for_database_exception() {
     final CourseRegisterDto courseRegisterDto = new CourseRegisterDto();
     courseRegisterDto.setName("Story time for kids");
-    courseRegisterDto.setLimitOfCostumers(10);
+    courseRegisterDto.setLimitOfCustomers(10);
     courseRegisterDto.setStartDateAndTime("11/09/2022 12:43 AM");
     courseRegisterDto.setAgeGroup("kids");
     courseRegisterDto.setPriceOfClass(new BigDecimal(25));

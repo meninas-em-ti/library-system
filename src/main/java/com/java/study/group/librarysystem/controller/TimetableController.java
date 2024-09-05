@@ -31,7 +31,7 @@ public class TimetableController {
     List<CourseDto> courseDtoList =  new ArrayList<CourseDto>();
     List<Course> courseList = repository.findAll();
     for(Course course : courseList) {
-      CourseDto courseDtoItem = new CourseDto(course.getName(),course.getLimitOfCostumers(),
+      CourseDto courseDtoItem = new CourseDto(course.getName(),course.getLimitOfCustomers(),
           course.getStartDateAndTime(),course.getAgeGroup(),course.getPriceOfClass(),
               course.getInstructorName());
       courseDtoList.add(courseDtoItem);

@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 public class CourseDto {
 
     private String name;
-    private int limitOfCostumers;
+    private int limitOfCustomers;
     private LocalDateTime startDateAndTime;
     private String ageGroup;
     private BigDecimal priceOfClass;
@@ -23,7 +23,7 @@ public class CourseDto {
     public Course toCourse(){
         Course course = new Course();
         course.setName(this.name);
-        course.setLimitOfCostumers(this.limitOfCostumers);
+        course.setLimitOfCustomers(this.limitOfCustomers);
         course.setAgeGroup(this.ageGroup);
         course.setInstructorName(this.instructorName);
         course.setPriceOfClass(this.priceOfClass);
